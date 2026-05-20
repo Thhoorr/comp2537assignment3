@@ -46,6 +46,8 @@ function setup() {
     
       <span id="click_count">Clicks: 0</span>
       <span id="timer">Time: ${TIMER_START}s</span>
+      <span id="pairs_matched">Matched: 0</span>
+    <span id="pairs_remaining">Remaining: ${TOTAL_PAIRS}</span>
   `);
 
   $("#game_grid").after(`<div id="message"></div>`);
@@ -68,6 +70,11 @@ function setup() {
     $("#click_count").text(`Clicks: ${clicks}`);
   }
 
+  function updatePairs() {
+    $("#pairs_matched").text(`Matched: ${matchedPairs}`);
+    $("#pairs_remaining").text(`Remaining: ${TOTAL_PAIRS - matchedPairs}`);
+  }
+
   function handleClick() {
     $(this).toggleClass("flip");
 
@@ -86,6 +93,7 @@ function setup() {
         firstCard = undefined;
         matchedPairs++;
         matchStreak++;
+        updatePairs();
 
         if (matchStreak >= 3 && !powerUpReady) {
           powerUpReady = true;
