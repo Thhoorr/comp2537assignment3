@@ -83,6 +83,11 @@ function setup() {
       updateClicks();
       firstCard = $(this).find(".front_face")[0];
     } else {
+      if ($(this).find(".front_face")[0] === firstCard) {
+        $(this).toggleClass("flip");
+        return;
+      }
+
       updateClicks();
       secondCard = $(this).find(".front_face")[0];
       $(".card").off("click");
