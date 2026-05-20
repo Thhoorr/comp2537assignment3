@@ -1,0 +1,8 @@
+body {
+  background-color: #000000;
+  color: white;
+}
+
+#game_grid {
+  border: 2px rgb(17, 67, 206) solid;
+}

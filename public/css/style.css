@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+}
+
+#header {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+#game_grid {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 10vw;
+  height: 10vw;
+  position: relative;
+  transition: transform 1s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+img {
+  width: 100%;
+}
+
+.front_face,
+.back_face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front_face {
+  transform: rotateY(180deg);
+}
+
+#hud {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+#message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 16px;
+  min-height: 2rem;
+}

@@ -1,0 +1,28 @@
+<%- include("templates/header", { theme: theme }) %>
+<div id="header">
+    <a href="/easy">easy</a>
+    <a href="/medium">medium</a>
+    <a href="/hard">hard</a>
+</div>
+<div id="hud">
+    <form action="/<%= difficulty %>" method="get" style="display: inline">
+        <button type="submit">Restart</button>
+    </form>
+</div>
+<div id="game_grid" style="width: <%= columns * 10 %>vw"></div>
+  <% for (let i = 0; i < cards.length * 2; i += 2) { %>
+    <div class="card">
+      <img id="img<%= i %>" class="front_face" src="<%= cards[Math.floor(i / 2)] %>" alt="" />
+      <img class="back_face" src="back.webp" alt="" />
+    </div>
+    <div class="card">
+      <img id="img<%= i + 1 %>" class="front_face" src="<%= cards[Math.floor(i / 2)] %>" alt="" />
+      <img class="back_face" src="back.webp" alt="" />
+    </div>
+  <% } %>
+</div>
+
+<form action="<%= difficulty %>/theme" method="post" >
+    <button type="submit">Change Theme</button>
+</form>
+<%- include("templates/footer") %>
